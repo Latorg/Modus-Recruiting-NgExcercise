@@ -1,0 +1,16 @@
+<nav class="navbar navbar-light bg-light justify-content-center d-flex" >
+    <a class="navbar-brand" >Users List</a>
+  </nav>
+<div class="container mt-5">
+    <div class="list-group">
+        <a  *ngFor="let user of users; let i = index "
+            [routerLink]="['/users-detail', user.id ]" 
+            class="list-group-item list-group-item-action" 
+            >
+          {{ i + 1 }}. {{ user.first_name }} {{ user.last_name }}
+        </a>
+    </div>
+</div>
+<div class="container justify-content-center d-flex">
+  <a routerLink="/home" class="btn btn-primary">Back to home</a>
+</div>

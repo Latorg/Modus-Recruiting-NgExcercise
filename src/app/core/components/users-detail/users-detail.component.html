@@ -1,0 +1,21 @@
+<nav class="navbar navbar-light bg-light justify-content-center d-flex" >
+    <a class="navbar-brand" >User Profile</a>
+</nav>
+
+<div class="container mt-5 justify-content-center d-flex" *ngIf="user && user.id">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" [src]="user.avatar" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
+            <p class="card-text">Email: {{ user.email }}</p>
+        </div>
+    </div>
+</div><br />
+<div class="container mt-5 justify-content-center d-flex" *ngIf="user && !user.id">
+    <div class="alert alert-danger" role="alert">
+        User Not Found!
+    </div>
+</div><br />
+<div class="container justify-content-center d-flex">
+    <a routerLink="/users-list" class="btn btn-primary">Back to users list</a>
+</div>
